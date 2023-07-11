@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import styled from "styled-components";
 import "./App.css";
 import Character from "./components/Character";
 
@@ -21,12 +22,19 @@ const App = () => {
   }, []);
   console.log(data);
 
+  const StyledCharacterList = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  `;
   return (
     <div className="App">
       <h1 className="Header">Characters</h1>
-      {data.map((element) => {
-        return <Character {...element} />;
-      })}
+      <StyledCharacterList>
+        {data.map((element) => {
+          return <Character {...element} />;
+        })}
+      </StyledCharacterList>
     </div>
   );
 };
