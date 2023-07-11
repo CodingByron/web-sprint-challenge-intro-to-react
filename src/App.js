@@ -27,6 +27,7 @@ const App = () => {
     flex-wrap: wrap;
     justify-content: center;
   `;
+  if (!data) return null;
   return (
     <div className="App">
       <h1 className="Header">Characters</h1>
